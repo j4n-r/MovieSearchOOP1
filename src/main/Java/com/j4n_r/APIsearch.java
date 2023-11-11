@@ -80,7 +80,7 @@ public class APIsearch {
         // new array list with movie Objects
         List<Movie> movies = new ArrayList<>();
 
-        // new Json Parser with gson lib
+        // new Json Parser with gson library
         JsonParser jsonParser = new JsonParser();
         JsonObject jsonObject = jsonParser.parse(jsonResponse).getAsJsonObject();
 
