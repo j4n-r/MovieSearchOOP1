@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@style.css">
    <children>
       <Pane layoutY="-2.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: white;">
          <children>
@@ -26,7 +26,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <ListView fx:id="resultListView" layoutX="85.0" layoutY="200.0" prefHeight="545.0" prefWidth="830.0" />
+            <ListView fx:id="resultListView" layoutX="85.0" layoutY="200.0" prefHeight="545.0" prefWidth="830.0"  />
          </children>
       </Pane>
    </children>

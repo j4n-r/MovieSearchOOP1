@@ -19,6 +19,9 @@ public class APIsearch {
     public APIsearch(String movieSearch) {
         this.movieSearch = movieSearch;
     }
+    public APIsearch() {
+
+    }
 
     // replace spaces with "+" for the URL parameter
     private String cleanMovieSearch(String search) {
@@ -48,32 +51,14 @@ public class APIsearch {
 
         } catch (Exception e) {
             System.err.println(e);
+
             return null;
         }
     }
 
-    public List<Movie> apiSearch() {
-        HttpClient httpClient = HttpClient.newHttpClient();
-        try {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("http://www.omdbapi.com/?s="  + "&apikey=" + System.getenv("API_KEY")))
-                    .GET()
-                    .build();
-            HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-
-            httpResponse = response.body();
-            System.out.println("Response Code: " + response.statusCode());
-            System.out.println("Response Body: " + httpResponse);
-
-            return parseJsonResponse(httpResponse);
-
-        } catch (Exception e) {
-            System.err.println(e);
-            return null;
-        }
+    public String returnError() {
+        return "Movie not found";
     }
-
-
 
 
     private List<Movie> parseJsonResponse(String jsonResponse) {
@@ -83,6 +68,7 @@ public class APIsearch {
         // new Json Parser with gson library
         JsonParser jsonParser = new JsonParser();
         JsonObject jsonObject = jsonParser.parse(jsonResponse).getAsJsonObject();
+
 
         // essentially just sets the JSON response as instance variables
         if (jsonObject.has("Search")) {
@@ -99,6 +85,7 @@ public class APIsearch {
                 Movie movie = new Movie(title, year, imdbID, type);
                 movies.add(movie);
             }
+
         }
 
         return movies;
