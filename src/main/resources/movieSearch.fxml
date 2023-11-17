@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Pane layoutY="-2.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: white;">
+         <children>
+            <TextField fx:id="searchField" layoutX="85.0" layoutY="132.0" onAction="#searchFieldOnAction" prefHeight="38.0" prefWidth="732.0" promptText="Search">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label layoutX="25.0" layoutY="25.0" prefHeight="59.0" prefWidth="411.0" style="-fx-background-color: white;" text="Movie Search">
+               <font>
+                  <Font name="Lato Black" size="39.0" />
+               </font>
+            </Label>
+            <Button fx:id="searchButton" layoutX="830.0" layoutY="132.0" mnemonicParsing="false" onAction="#searchButtonOnAction" prefHeight="38.0" prefWidth="83.0" style="-fx-background-color: #d3d3d3; -fx-border-radius: 5;" text="Search">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <ListView fx:id="resultListView" layoutX="85.0" layoutY="200.0" prefHeight="545.0" prefWidth="830.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
